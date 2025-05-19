@@ -48,7 +48,7 @@ export class LoginComponent {
   }
 
   onSubmit(form: NgForm) {
-    this.authService.login();
+    // this.authService.login();
     this.userService.setUserType(this.userType);
     const route = this.userType === 'customer' ? '/customer' : '/vendor';
     this.router.navigate([route]);

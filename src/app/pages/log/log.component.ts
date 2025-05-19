@@ -15,10 +15,10 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class LogComponent {
   loginModel = {
-    email: '',
+    userName: '',
     password: '',
-    userType: '',
   };
+  userType: string = 'customer';
   hidePassword: boolean = true;
   showPasswordField = false;
 
@@ -56,9 +56,16 @@ export class LogComponent {
   }
 
   onSubmit() {
-    this.authService.login();
-    this.userService.setUserType(this.loginModel.userType);
-    switch (this.loginModel.userType) {
+    this.authService.login(this.loginModel).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
+    this.userService.setUserType(this.userType);
+    switch (this.userType) {
       case 'customer':
         this.router.navigate(['/customer']);
         break;

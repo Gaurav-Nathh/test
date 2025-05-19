@@ -82,8 +82,17 @@
             padding-left: 3rem;
             width: 100%;
             padding-block: 0.7rem;
-            border: 1.5px solid #e7e7e7;
+            border: 2px solid #e7e7e7;
             border-radius: 0.6rem;
+            transition: all 0.3s ease-out;
+            background-color: transparent;
+            color: var(--primary-text);
+
+            &:hover,
+            &:focus {
+              border-color: var(--color-blue);
+              outline: none;
+            }
           }
 
           .icon-left {
@@ -91,14 +100,14 @@
             left: 1.2rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #696969;
+            color: var(--color-blue);
           }
           .icon-right {
             position: absolute;
             right: 1.2rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #696969;
+            color: var(--color-blue);
           }
         }
       }
@@ -122,11 +131,18 @@
       }
 
       button {
-        // margin-top: 1.5rem;
         padding: 0.7rem;
         color: white;
         border-radius: 0.6rem;
         background-color: var(--color-blue);
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        &:hover {
+          background-color: var(--color-blue-active);
+        }
       }
     }
   }
@@ -150,7 +166,7 @@
     background: var(--color-card);
     flex-direction: column;
     position: relative;
-    padding: 1rem;
+    padding: 2.5rem;
 
     @media (max-width: 900px) {
       display: none;
@@ -167,8 +183,8 @@
       }
 
       .carousel-text {
-        margin-block: 10px;
-        font-size: 14px;
+        margin-block: 20px;
+        font-size: 1.2rem;
         color: #696969;
       }
       .progress-bar-body {

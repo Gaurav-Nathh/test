@@ -1,0 +1,123 @@
+<div class="main mt-4">
+  <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+    <div class="row form-row">
+      <!-- Left Column -->
+      <div class="col-md-6 form-col">
+        <div class="row">
+          <div class="col-sm-4 mb-3">
+            <label for="" class="form-label">Salutation</label>
+            <select
+              name="salutation"
+              id="salutation"
+              class="form-select"
+              [(ngModel)]="salutation"
+              required
+            >
+              <option value="mr.">Mr.</option>
+              <option value="mrs.">Mrs.</option>
+              <option value="ms.">Ms.</option>
+              <option value="miss.">Miss.</option>
+              <option value="dr.">Dr.</option>
+            </select>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <label for="lastName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              [(ngModel)]="CustomerService.customer.firstName"
+              name="firstName"
+              required
+              (ngModelChange)="updateDisplayNameOptions()"
+            />
+          </div>
+          <div class="col-sm-4 mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              [(ngModel)]="lastName"
+              name="lastName"
+              required
+              (ngModelChange)="updateDisplayNameOptions()"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 mb-3">
+            <label for="displayName" class="form-label">Display Name</label>
+            <select
+              type="text"
+              name="displayName"
+              id="displayName"
+              class="form-select"
+              required
+              [(ngModel)]="displayName"
+            >
+              <option
+                *ngFor="let option of displayNameOptions"
+                [value]="option"
+              >
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-body">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="Email"
+              />
+              <!-- <i class="form-icon fa-solid fa-envelope"></i> -->
+              <i class="bi bi-envelope"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="phone" class="form-label">Phone</label>
+          <div class="col-sm-6 mb-3 input-body">
+            <input
+              type="text"
+              class="form-control"
+              id="workPhone"
+              placeholder="Work Phone"
+            />
+            <i class="bi bi-telephone"></i>
+          </div>
+          <div class="col-sm-6 mb-3 input-body">
+            <input
+              type="text"
+              class="form-control"
+              id="mobilePhone"
+              placeholder="Mobile"
+            />
+            <i class="bi bi-phone"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-6 form-col">
+        <div class="row">
+          <div class="col-sm-6 mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" />
+          </div>
+          <div class="col-sm-6 mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3 text-end">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

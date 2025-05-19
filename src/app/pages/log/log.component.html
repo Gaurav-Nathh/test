@@ -17,7 +17,7 @@
             <input
               type="radio"
               name="userType"
-              [(ngModel)]="loginModel.userType"
+              [(ngModel)]="userType"
               value="vendor"
             />
             Vendor
@@ -26,7 +26,7 @@
             <input
               type="radio"
               name="userType"
-              [(ngModel)]="loginModel.userType"
+              [(ngModel)]="userType"
               value="customer"
             />
             Customer
@@ -35,7 +35,7 @@
             <input
               type="radio"
               name="master"
-              [(ngModel)]="loginModel.userType"
+              [(ngModel)]="userType"
               value="master"
             />
             Master
@@ -47,7 +47,7 @@
             <input
               type="email"
               placeholder="Enter your email"
-              [(ngModel)]="loginModel.email"
+              [(ngModel)]="loginModel.userName"
               #email="ngModel"
               name="email"
               require

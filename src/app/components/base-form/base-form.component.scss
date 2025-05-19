@@ -1,0 +1,32 @@
+.main {
+  padding: 1rem;
+}
+
+.bord {
+  border: 1px solid red;
+}
+form {
+  .form-col {
+    border-radius: 0.6rem;
+    padding-top: 0.8rem;
+  }
+
+  label {
+    font-size: 0.8rem !important;
+  }
+}
+
+.input-body {
+  position: relative;
+
+  input {
+    padding-left: 2.4rem;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0.8rem;
+  }
+}

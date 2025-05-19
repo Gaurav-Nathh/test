@@ -1,157 +1,126 @@
-<form
-  #purchaseOrderForm="ngForm"
-  (ngSubmit)="onSubmit(purchaseOrderForm)"
-  class="row mb-4"
->
+<form #purchaseOrderForm="ngForm" (ngSubmit)="onSubmit(purchaseOrderForm)" class="row mb-4">
   <!-- Vendor Info -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100 shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title fw-semibold">Vendor Information</h5>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class=" col-lg-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Vourcher Type <span>*</span></label>
+                  <select class="form-select" name="vendorName" [(ngModel)]="form.vendorName" required>
+                    <option value="" selected>Purchase Order</option>
+                  </select>
+                </div>
 
-        <div class="mb-3">
-          <label class="form-label">Vendor Name</label>
-          <select
-            class="form-select"
-            name="vendorName"
-            [(ngModel)]="form.vendorName"
-            required
-          >
-            <option value="" disabled selected>Select vendor</option>
-            <option>Vendor 1</option>
-            <option>Vendor 2</option>
-          </select>
-        </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Type <span>*</span></label>
+                  <select class="form-select" name="vendorName" [(ngModel)]="form.vendorName" required>
+                    <option value="" selected>Purchase</option>
+                  </select>
+                </div>
 
-        <div class="mb-3">
-          <label class="form-label">Organization</label>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="orgType"
-              [(ngModel)]="form.orgType"
-              value="Organization"
-              id="org"
-              required
-            />
-            <label class="form-check-label" for="org">Organization</label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="orgType"
-              [(ngModel)]="form.orgType"
-              value="Customer"
-              id="cust"
-            />
-            <label class="form-check-label" for="cust">Customer</label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Number</label>
+                  <input type="text" class="form-control" name="referenceNumber" [(ngModel)]="form.referenceNumber" />
+                </div>
 
-  <!-- Delivery Info -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100 shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title fw-semibold">Delivery Information</h5>
-        <div class="mb-3">
-          <label class="form-label">Delivery Address</label>
-          <textarea
-            class="form-control"
-            rows="3"
-            name="deliveryAddress"
-            [(ngModel)]="form.deliveryAddress"
-            required
-          ></textarea>
-          <button class="btn btn-sm btn-link mt-2 px-0" type="button">
-            Change destination
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date</label>
+                  <input type="date" class="form-control" />
+                </div>
 
-  <!-- PO Details -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100 shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title fw-semibold">Purchase Order Details</h5>
 
-        <div class="row">
-          <div class="col-6 mb-3">
-            <label class="form-label">Purchase Order #</label>
-            <input
-              type="text"
-              class="form-control"
-              name="poNumber"
-              [(ngModel)]="form.poNumber"
-              readonly
-            />
-          </div>
-          <div class="col-6 mb-3">
-            <label class="form-label">Reference #</label>
-            <input
-              type="text"
-              class="form-control"
-              name="referenceNumber"
-              [(ngModel)]="form.referenceNumber"
-            />
+                <div class=" col-lg-12 col-xl-12 mb-3">
+                  <label for="" class="form-label">Vendor <span>*</span></label>
+                  <input type="text" class="form-control" name="vendor" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-6 mb-3">
-            <label class="form-label">Date</label>
-            <input
-              type="date"
-              class="form-control"
-              name="date"
-              [(ngModel)]="form.date"
-              required
-            />
-          </div>
-          <div class="col-6 mb-3">
-            <label class="form-label">Delivery Date</label>
-            <input
-              type="date"
-              class="form-control"
-              name="deliveryDate"
-              [(ngModel)]="form.deliveryDate"
-              required
-            />
+        <!-- Delivery Info -->
+        <div class=" col-lg-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-6 col-lg-12 mb-3">
+                  <label for="" class="form-label">Purchase Representative</label>
+                  <input type="text" class="form-control" name="vendor" />
+                </div>
+
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label for="">Mobile No.</label>
+                  <input type="text" class="form-control" name="" />
+                </div>
+
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label for="">Email Id</label>
+                  <input type="text" class="form-control" name="" />
+                </div>
+
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label for="">Against</label>
+                  <select class="form-select" name="" required>
+                    <option value="" selected>Direct</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label for="">Number</label>
+                  <input type="text" class="form-control" name="" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-6 mb-3">
-            <label class="form-label">Payment Terms</label>
-            <select
-              class="form-select"
-              name="paymentTerms"
-              [(ngModel)]="form.paymentTerms"
-            >
-              <option value="" disabled selected>Select payment terms</option>
-              <option>Net 15</option>
-              <option>Net 30</option>
-            </select>
-          </div>
-          <div class="col-6 mb-3">
-            <label class="form-label">Shipment Preference</label>
-            <select
-              class="form-select"
-              name="shipmentPreference"
-              [(ngModel)]="form.shipmentPreference"
-            >
-              <option value="" disabled selected>
-                Select shipment preference
-              </option>
-              <option>Standard</option>
-              <option>Express</option>
-            </select>
+        <!-- PO Details -->
+        <div class=" col-lg-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label class="form-label">Reference #</label>
+                  <input type="text" class="form-control" name="referenceNumber" [(ngModel)]="form.referenceNumber" />
+                </div>
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label class="form-label">Date</label>
+                  <input type="date" class="form-control" name="date" [(ngModel)]="form.date" required />
+                </div>
+              </div>
+
+              <div class="row">
+                 <div class="col-sm-12 col-md-6 mb-3">
+                  <label class="form-label">Delivery By</label>
+                  <select class="form-select" name="" required>
+                    <option value="" selected>Date</option>
+                    <option value="">SCHEDULE</option>
+                  </select>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-3">
+                  <label class="form-label">Delivery Date</label>
+                  <input type="date" class="form-control" name="deliveryDate" [(ngModel)]="form.deliveryDate"
+                    required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Ship To</label>
+                  <select class="form-select" name="shipTo" [(ngModel)]="form.shipmentPreference">
+                    <option value="" selected>
+                      Branch
+                    </option>
+                    <option>Party</option>
+                    <option>store</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -178,55 +147,25 @@
           <tbody>
             <tr *ngFor="let item of items; let i = index">
               <td>
-                <input
-                  class="form-control form-control-sm"
-                  name="itemName{{ i }}"
-                  [(ngModel)]="item.itemName"
-                  required
-                />
+                <input class="form-control form-control-sm" name="itemName{{ i }}" [(ngModel)]="item.itemName"
+                  required />
               </td>
               <td>
-                <input
-                  class="form-control form-control-sm"
-                  name="account{{ i }}"
-                  [(ngModel)]="item.account"
-                  required
-                />
+                <input class="form-control form-control-sm" name="account{{ i }}" [(ngModel)]="item.account" required />
               </td>
               <td>
-                <input
-                  type="number"
-                  class="form-control form-control-sm"
-                  name="quantity{{ i }}"
-                  [(ngModel)]="item.quantity"
-                  (input)="updateAmount(item)"
-                  required
-                />
+                <input type="number" class="form-control form-control-sm" name="quantity{{ i }}"
+                  [(ngModel)]="item.quantity" (input)="updateAmount(item)" required />
               </td>
               <td>
-                <input
-                  type="number"
-                  class="form-control form-control-sm"
-                  name="rate{{ i }}"
-                  [(ngModel)]="item.rate"
-                  (input)="updateAmount(item)"
-                  required
-                />
+                <input type="number" class="form-control form-control-sm" name="rate{{ i }}" [(ngModel)]="item.rate"
+                  (input)="updateAmount(item)" required />
               </td>
               <td>
-                <input
-                  type="number"
-                  class="form-control form-control-sm"
-                  [value]="item.amount"
-                  readonly
-                />
+                <input type="number" class="form-control form-control-sm" [value]="item.amount" readonly />
               </td>
               <td>
-                <button
-                  class="btn btn-sm btn-danger"
-                  type="button"
-                  (click)="removeItem(i)"
-                >
+                <button class="btn btn-sm btn-danger" type="button" (click)="removeItem(i)">
                   Remove
                 </button>
               </td>
@@ -249,12 +188,7 @@
         <div class="card shadow-sm h-100">
           <div class="card-body">
             <h5 class="card-title fw-semibold">Customer Notes</h5>
-            <textarea
-              class="form-control"
-              rows="5"
-              name="customerNotes"
-              [(ngModel)]="form.customerNotes"
-            ></textarea>
+            <textarea class="form-control" rows="5" name="customerNotes" [(ngModel)]="form.customerNotes"></textarea>
           </div>
         </div>
       </div>
@@ -269,12 +203,7 @@
             <div class="d-flex justify-content-between mb-2">
               <span>Discount</span>
               <div class="input-group input-group-sm" style="width: 120px">
-                <input
-                  type="number"
-                  class="form-control"
-                  name="discount"
-                  [(ngModel)]="form.discount"
-                />
+                <input type="number" class="form-control" name="discount" [(ngModel)]="form.discount" />
                 <span class="input-group-text">%</span>
                 <span class="input-group-text">₹0.00</span>
               </div>
@@ -289,8 +218,7 @@
               <span>Adjustment</span><span>₹0.00</span>
             </div>
             <div class="d-flex justify-content-between border-top pt-2">
-              <span class="fw-bold">Total (₹)</span
-              ><span class="fw-bold">₹0.00</span>
+              <span class="fw-bold">Total (₹)</span><span class="fw-bold">₹0.00</span>
             </div>
           </div>
         </div>
@@ -305,13 +233,8 @@
         <div class="card shadow-sm h-100">
           <div class="card-body">
             <h5 class="card-title fw-semibold">Terms & Conditions</h5>
-            <textarea
-              class="form-control"
-              rows="5"
-              name="terms"
-              [(ngModel)]="form.terms"
-              placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
-            ></textarea>
+            <textarea class="form-control" rows="5" name="terms" [(ngModel)]="form.terms"
+              placeholder="Enter the terms and conditions of your business to be displayed in your transaction"></textarea>
           </div>
         </div>
       </div>
@@ -328,40 +251,28 @@
               <label class="upload-button me-2">
                 <span class="upload-icon">↑</span>
                 Upload File
-                <input
-                  type="file"
-                  multiple
-                  (change)="onFileSelected($event)"
-                  accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"
-                  hidden
-                />
+                <input type="file" multiple (change)="onFileSelected($event)"
+                  accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" hidden />
               </label>
               <button class="dropdown-button">
                 <span>▼</span>
               </button>
             </div>
 
-            <div
-              class="upload-info-card p-3 mb-3 text-muted bg-light border rounded"
-            >
+            <div class="upload-info-card p-3 mb-3 text-muted bg-light border rounded">
               <small>You can upload a maximum of 10 files, 10MB each</small>
             </div>
 
             <div class="file-list" *ngIf="attachedFiles.length > 0">
-              <div
-                class="file-item border rounded p-2 mb-2 d-flex justify-content-between align-items-center"
-                *ngFor="let file of attachedFiles; let i = index"
-              >
+              <div class="file-item border rounded p-2 mb-2 d-flex justify-content-between align-items-center"
+                *ngFor="let file of attachedFiles; let i = index">
                 <div>
                   <div class="file-name fw-semibold">{{ file.name }}</div>
                   <div class="file-size small text-muted">
                     {{ formatFileSize(file.size) }}
                   </div>
                 </div>
-                <button
-                  class="btn btn-sm btn-outline-danger"
-                  (click)="removeFile(i)"
-                >
+                <button class="btn btn-sm btn-outline-danger" (click)="removeFile(i)">
                   ×
                 </button>
               </div>
@@ -373,11 +284,7 @@
   </div>
   <!-- Form Actions -->
   <div class="col-12 d-flex justify-content-end gap-3">
-    <button
-      class="btn btn-outline-secondary px-4"
-      type="button"
-      [routerLink]="'/customer/purchase-dashboard'"
-    >
+    <button class="btn btn-outline-secondary px-4" type="button" [routerLink]="'/customer/purchase-dashboard'">
       Cancel
     </button>
     <button class="btn btn-primary px-4" type="submit">Save Draft</button>

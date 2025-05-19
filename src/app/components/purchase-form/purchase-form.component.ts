@@ -20,7 +20,7 @@ export class PurchaseFormComponent {
     vendorName: '',
     orgType: '',
     deliveryAddress: '',
-    poNumber: 'PO-1234',
+    poNumber: '',
     referenceNumber: '',
     date: '',
     deliveryDate: '',

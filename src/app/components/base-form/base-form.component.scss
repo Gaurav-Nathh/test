@@ -30,3 +30,69 @@ form {
     margin-left: 0.8rem;
   }
 }
+
+// #shopping-cart {
+//   display: grid;
+//   grid-template-columns: 1fr 0.4fr;
+
+//   @media (max-width: 768px) {
+//     grid-template-columns: 1fr;
+//   }
+
+//   #cart-product-list {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//     #heading {
+//       @media (max-width: 768px) {
+//         display: none;
+//       }
+//     }
+//     .cart-product-container {
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+
+//       @media (max-width: 768px) {
+//         grid-template-columns: 1fr;
+//       }
+//       .container-1 {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         align-items: center;
+//         @media (max-width: 768px) {
+//           grid-template-columns: 1fr;
+//         }
+//       }
+//       .container-2 {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr 1fr 0.2fr;
+//         align-items: center;
+//         text-align: end;
+
+//         .delete-btn {
+//           background-color: transparent;
+//           color: red;
+//           width: fit-content;
+//         }
+
+//         .qunatity-container {
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           gap: 1rem;
+
+//           button {
+//             width: 2rem;
+//             height: 2rem;
+//             border-radius: 100%;
+//             background-color: #e8e8e8;
+//           }
+//         }
+//       }
+//     }
+//     .container-style {
+//       background-color: #f8f8f8;
+//       padding: 1rem;
+//     }
+//   }
+// }

@@ -3,6 +3,7 @@ import { PurchaseFormComponent } from '../../../components/purchase-form/purchas
 import { ShoppingCartComponent } from '../../shopping-cart/shopping-cart.component';
 import { RouterModule } from '@angular/router';
 import { SharedService } from '../../../services/shared/shared.service';
+import { ShoppingCartService } from '../../../services/shoppingCart-service/shopping-cart.service';
 
 @Component({
   selector: 'app-po-form',
@@ -12,7 +13,10 @@ import { SharedService } from '../../../services/shared/shared.service';
 })
 export class PoFormComponent {
   isShopingCartOpen = false;
-  constructor(private sharedService: SharedService) {}
+  constructor(
+    private sharedService: SharedService,
+    private shoppingCartService: ShoppingCartService
+  ) {}
 
   ngOnInit() {
     this.sharedService.shoppingCartVisible$.subscribe((visible) => {
@@ -20,6 +24,7 @@ export class PoFormComponent {
     });
   }
   toggleShoppingCart() {
-    this.sharedService.toggleShoppingCartVisibility();
+    // this.shoppingCartService.setCartCloseBtn(true);
+    this.sharedService.toggleShoppingCartVisibility(true);
   }
 }

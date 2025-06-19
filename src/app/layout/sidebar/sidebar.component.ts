@@ -37,7 +37,7 @@ export class SidebarComponent {
   userType!: string;
 
   ngOnInit() {
-    this.userType = this.userService.getUserType();
+    this.userType = this.userService.getUserType().toLowerCase();
     this.buildMenu();
     this.currentMenu =
       this.userType === 'vendor' ? this.vendorMenu : this.customerMenu;
@@ -48,7 +48,7 @@ export class SidebarComponent {
       case 'vendor':
         this.currentMenu = this.vendorMenu;
         break;
-      case 'master':
+      case 'system':
         this.currentMenu = this.masterMenu;
         break;
     }
@@ -146,6 +146,11 @@ export class SidebarComponent {
       route: '/customer/shopping-cart',
     },
     {
+      text: 'Sales Status',
+      icon: 'fa-solid fa-money-bill-trend-up',
+      route: '/customer/shopping-cart',
+    },
+    {
       text: 'Invoice',
       icon: 'fa-solid fa-cart-shopping',
       route: '/customer/invoice',
@@ -187,17 +192,17 @@ export class SidebarComponent {
       submenu: [
         {
           text: 'Customers',
-          icon: 'fa-solid fa-user',
-          route: '/master/users/customers',
+          icon: 'fa-solid fa-users',
+          route: '/master/sales/customers',
         },
         {
           text: 'Sales Orders',
-          icon: 'fa-solid fa-user',
-          route: '/master/users/vendors',
+          icon: 'bi bi-file-text-fill',
+          route: '/master/sales/sales-order',
         },
         {
           text: 'Invoices',
-          icon: 'fa-solid fa-user',
+          icon: 'bi bi-file-text-fill',
           route: '/master/users/vendors',
         },
       ],
@@ -209,13 +214,13 @@ export class SidebarComponent {
       submenu: [
         {
           text: 'Vendors',
-          icon: 'fa-solid fa-user',
-          route: '/master/users/vendors',
+          icon: 'fa-solid fa-users',
+          route: '/master/purchase/vendors',
         },
         {
           text: 'Purchase Orders',
-          icon: 'fa-solid fa-user',
-          route: '/master/users/vendors',
+          icon: 'bi bi-file-text-fill',
+          route: '/master/purchase/purchase-order',
         },
       ],
     },

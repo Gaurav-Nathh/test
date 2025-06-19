@@ -1,5 +1,5 @@
 .sidenav {
-  transition: all 0.3s ease-out;
+  transition: width 0.3s ease-out;
   overflow-x: hidden;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   height: 100%;
@@ -136,7 +136,7 @@
   .submenu-link {
     display: flex;
     align-items: center;
-    color: #555;
+    color: var(--primary-text);
     text-decoration: none;
     margin-left: 1.5rem;
     border-radius: 0.4rem;

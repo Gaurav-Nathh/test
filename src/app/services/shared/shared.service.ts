@@ -32,8 +32,8 @@ export class SharedService {
     return this.sidebarVisible.value;
   }
 
-  toggleShoppingCartVisibility() {
-    this.shoppingCartVisible.next(!this.shoppingCartVisible.value);
+  toggleShoppingCartVisibility(value: boolean) {
+    this.shoppingCartVisible.next(value);
   }
 
   getShoppingCartVisibility() {

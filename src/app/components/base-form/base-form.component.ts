@@ -96,4 +96,35 @@ export class BaseFormComponent {
       }
     });
   }
+
+  items = [
+    { ItmName: 'Computer', ItmCode: 'HFGR2345', ItmMrp: 1234 },
+    { ItmName: 'Computer', ItmCode: 'HFGR2345', ItmMrp: 1234 },
+  ];
+
+  cart: any[] = [];
+  removeItem(item: any) {
+    this.cart = this.cart.filter((i) => i !== item);
+  }
+
+  incrementQty(product: any) {
+    if (!product.quantity) product.quantity = 1;
+    product.quantity++;
+  }
+
+decrementQty(product: any) {
+    if (!product.quantity) product.quantity = 1;
+    if (product.quantity > 1) product.quantity--;
+  }
+
+  get totalQty() {
+    return this.cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  }
+
+  get totalAmount(): number {
+    return this.cart.reduce(
+      (total, item) => total + item.price * (item.quantity || 1),
+      0
+    );
+  }
 }
